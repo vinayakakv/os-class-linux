@@ -1,9 +1,5 @@
 # Understanding a Linux basesd OS
-```
-Vinayaka K V
-MTech (Research)
-NITK, Surathkal
-```
+
 ## Agenda for this series
 1. Motivation
 2. Inside Linux
