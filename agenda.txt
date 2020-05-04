@@ -1,0 +1,94 @@
+Agenda for OS session
+-------------------------
+1. Exploring linux filesystem -- /, /proc, /dev, /sys, ...
+2. Shell internals -- Environment variables, shell variables, rc files
+3. Compilation process -- Converting source to object file, Linking, Execution. Tracing system calls (strace)
+4. Debugging C programs -- gdb and valgrind
+
+Details
+----------------
+Motivation -- 
+    1. Where GUI is useful and where it is not. 
+        Exploring files, working with documents, photos etc
+        But automatation is hard in GUI, we want some scripting Environment
+        Example, want *xmp files to be moved to seperate directory
+        Do a repeated photo editing task
+        Scraping tasks
+    2. The open source model
+        Failures of windows, cite some articles
+        Security in windows vs linux, reasons
+    3. Opportunities
+        Better understanding of computer systems and logic in general
+        Sysadmin tasks
+        Exposure to new programming pradigm
+
+Walking the filesystem
+    1. Basic commands 
+        pwd
+        ls with options
+        file
+        cp
+        mv
+        cd - meaning of . and ..
+    2. File system structure
+        tree structure based on /
+        exploring some special directories under /
+        mounting external filesyems
+        mount and umount
+        mount -- list supported file systems
+        chroot, if possible, demo
+        fuse with demo
+    3. Links
+        inode number
+        soft and hard Links
+        ln command
+        ls -z option
+
+Shell internals
+    1. Understanding command Execution
+        $PATH
+        binaries vs shell builtins
+        various shells -- sh, bash, zsh etc
+    2. Shell variables
+        setting
+        listing
+        some popular shell variables: $SHELL, $PWD etc..
+    3. Aliasing commands
+        application
+        alias command
+        listing
+        setting and deleting
+    4. Shell scripts and rc files
+        Shebang line
+        Interpreted nature of shell scripts
+        uses of rc files, and some of them
+        .bashrc changing to set $PATH
+        possibility of rc files: oh-my-zsh
+
+Life of Code
+    1. General code flow
+        editors -- nano, vi, gedit, subl etc...
+        language -- for now 'C'
+        compiler
+    2. Working of compiler
+        Overview with diagram
+        For more, refer ACD course and TA!
+    3. gcc process 
+        gcc preprocessing
+        command extension
+        -e preprocessing
+        -s without Linking
+        ld for Linking
+        -g for debugging info
+        objdump for disassembly
+
+Monitoring the executable
+    1. Tracing system calls
+        strace
+        uses and examples
+    2. Debugging
+        gdb 
+    3. Memory checks
+        valgrind
+
+Advanced 
