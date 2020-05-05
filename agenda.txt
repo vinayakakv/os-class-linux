@@ -61,6 +61,8 @@ Shell internals
     4. Shell scripts and rc files
         Shebang line
         Interpreted nature of shell scripts
+        chmod, chown, chgrp
+        Special variables $$ $_ ...
         uses of rc files, and some of them
         .bashrc changing to set $PATH
         possibility of rc files: oh-my-zsh
