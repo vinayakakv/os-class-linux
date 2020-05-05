@@ -1,8 +1,8 @@
 # Understanding a Linux based OS:  S1E3 - Shell
-> Shell is a programa that interprets commands and executes the programs specified by them
+> Shell is a program that interprets commands and executes the programs specified by them
 - They are the gateway to the system
 - `sh`, `bash` and `zsh` are some of the popular shells
-- A command, with its arguments is called **command line**
+- A command, with its arguments, is called **command line**
 ```shell    
         echo  -e "Good Day!\n"
        \----|---------------/
@@ -14,9 +14,9 @@
                  V
            Command Line
 ```
-- Shell parses the command line, and executes the program using `fork()`
-- During parsing, shell performs *expansion* of some of its arguments, which can be seen using **echo**
-- We can get the previous commandline using `!!`
+- The shell parses the command line, and executes the program using `fork()`
+- During parsing, the shell performs *expansion* of some of its arguments, which can be seen using **echo**
+- We can get the previous command line using `!!`
 ----
 ## Finding the executables - The `$PATH`
 - Shell variables can be used to store values
@@ -32,45 +32,45 @@
 - But, some commands like `cd` and `kill` does not exist anywhere. They are **Shell built-in commands**
 ---------
 ## Environment variables
-- Shell sets some variables while it is executing, which defines its behaviour.
-- They can be viwed using `env` command
+- Shell sets some variables while it is executing, which defines its behavior.
+- They can be viewed using `env` command
 - Some important environment variables are described below
 
  Variable | Significance 
 ----------|-------------
 `$PATH` | List of directories in which command is looked up
-`$PWD` | Current working directory. Can also be got using `pwd`
-`$USER` | Name of current user
-`$HOME` | Home directory of current user. Also `~`
+`$PWD` | current working directory. Can also be got using `pwd`
+`$USER` | Name of the current user
+`$HOME` | Home directory of the current user. Also `~`
 `$SHELL` | Location of the shell being used
 `$EDITOR` | Default text editor
-`$PROMPT` | Prompt of the shell. By default, `$` for normal user, and, `#` for super user (root)
+`$PROMPT` | Prompt of the shell. By default, `$` for a normal user, and, `#` for the superuser (root)
 `$TTY` | The `tty` or `pts` device on which the current shell is being active
 -----
 ## Modifying environment variables
-- We mostly modify `$PATH`, in order to add a directory to global list of paths from where the executables are searched
-- `PATH=$PATH:<new dir>`, remeber to append to existing path, or else everyting will be lost! (for that session, though :P)
+- We mostly modify `$PATH`, to add a directory to the global list of paths from where the executables are searched
+- `PATH=$PATH:<new dir>`, remember to append to the existing path, or else everything will be lost! (for that session, though ;P)
 - `export PATH=$PATH:<new dir>` also works, this makes the path visible to (i.e., exports to) child programs of the shell
-- But this change is temporary, thus, we have to do this everytime we want the change in effect
+- But this change is temporary; thus, we have to do this every time we want the change in effect
 - There must be some way to execute some commands whenever the shell gets started
 ------
 ## The run command (`rc`) files
 - Executed during initialization of the system, or, the shell
 - `~/.bashrc` is the file which is executed whenever a new session of `bash` is created
-- We can append the commands which are supposed to execute at the startup of terminal to `~/.bashrc`
-- We can re-execute the `rc` file in the middle of shell session by using `source`.
+- We can append the commands which are supposed to execute at the startup of the terminal to `~/.bashrc`
+- We can re-execute the `rc` file in the middle of the shell session by using `source`.
 ```shell
         source ~/.bashrc
 ```
-- There are other `rc` files for applications, and system startup
+- There are other `rc` files for applications and system startup
 - [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh) is a framework for customizing `zsh` using such scripts
 -----
 ## Shell scripts
 - Commands, with control sequences to be executed as a script
 - They are interpreted by the shell
-- If there is an error at line `i`, the program execute till line `i`, and shows error there. This is because of the interpreted nature of the shell
-- First line starting with `#!` tells which shell interpreter to use. Common interpreters are `/bin/bash`, `/bin/zsh`, `/bin/perl` and `/bin/python`. This line is popularly called *shebang* line.
-- Some special variables provide information of context of current script being exected. Some are listed as follows.
+- If there is an error at line `i`, the program execute till line `i`, and shows error there. This behavior is because of the interpreted nature of the shell
+- First-line starting with `#!` tells which shell interpreter to use. Common interpreters are `/bin/bash`, `/bin/zsh`, `/bin/perl` and `/bin/python`. This line is popularly called *shebang* line.
+- Some special variables provide information about the context of the current script being exected. Some are listed as follows.
 
 Variable | Significance 
 ---------|--------------
@@ -121,7 +121,7 @@ Variable | Significance
         |-------------------|
         |r|w|x||r|w|x||r|w|x|
         ---------------------
-  - The popular (and dangeours) example is `777`, which gives every permission to everyone.
+  - The popular (and dangerous) example is `777`, which gives every permission to everyone.
 - `chown` is a related command. It is used to set the owner of the file.
   - `chown [-R] user:group file`
 - `chgrp` is also there, which just changes the group.
@@ -130,13 +130,13 @@ Variable | Significance
 - Since `.` was in `$PATH`, we had to use `./`
 ------------
 ## Command aliases
-- Anologous to symlinks in filesystem
+- Analogous to symlinks in the filesystem
 - Long to type, frequently used commands are alised to some short commands
 - `alias` to view all aliases
-- `alias short=long` to set alias of `long` as `short`
-- Aliases are temporary, and live until the end of the session
-- In order to make them permament, append aliasing command to end of `rc` file of your shell
-- Popular alias is `alias ll=ls -l`
+- `alias short=long` to set an alias of `long` as `short`
+- Aliases are temporary and live until the end of the session
+- In order to make them permanent, append aliasing command to the end of `rc` file of your shell
+- A famous alias is `alias ll=ls -l`
 - Note that there is no space around `=`
 -----------
 ## Text utilities
@@ -148,17 +148,17 @@ Utility | Uses
 --------|------
 `echo`  | Print
 `cat`   | Con**cat**enate :cat:
-`grep`  | **G**lobal **R**egular **E**xpression **P**rint. prints occurances of the text matched by [RegEx](https://regexr.com/) 
+`grep`  | **G**lobal **R**egular **E**xpression **P**rint. prints occurrences of the text matched by [RegEx](https://regexr.com/) 
 `sed`   | **S**tream **Ed**itor. Popular for find and replace like operations based on RegExs on streams and files
 `tr`    | **Tr**anslate. Translates a list of source characters to destination characters
-`cut`   | Splits the stream based on given delimiter, and returns specified fields
+`cut`   | Splits the stream based on a given delimiter, and returns specified fields
 `paste` | Joins the content of input files onto a line with a specified delimiter
 `sort`  | Sorts the input stream
 `uniq`  | Display unique entries
 `less` and `more` | Pagers, divide the text crossing the window boundaries into pages
 `wc` | **W**ord **c**ount. Gives character, spaces and newline count
 
-We can combine them using pipes to achive variety of useful tasks.
+We can combine them using pipes to achieve a variety of useful tasks.
 
 ---------------
 ## Shell redirections
@@ -171,17 +171,17 @@ Symbol | Target
 `>file`    | `stdout` is written onto `file`
 `<file`    | `stdin` is read from `file`
 `>>file`   | `stdout` is appended onto `file`
-`x>&y` | File Descripter `x` is written onto File Descriptor `y`.`fd` of `stdin` is `0`, `stdout` is `1` and `stderr` is `2`
+`x>&y` | File Descriptor `x` is written onto File Descriptor `y`.`fd` of `stdin` is `0`, `stdout` is `1` and `stderr` is `2`
 - `command >/dev/null 2&>1` executes the command silently, as it redirects `stdout` to `/dev/null` (remember that it is the infinite sink) and then `stderr`(`fd` `2`) to `stdout`(`fd` `1`)
-- But this process is still hanging on terminal!
+- But this process is still hanging on the terminal!
 -------
 ## Background Processes
-- Long running processes with no interaction requried from user hang a terminal sesssion with their output
+- Long-running processes with no interaction required from user hang a terminal session with their output
 - Although we can silent them (using redirection), they still hang the terminal and require us to open a session
-- They can be created by appending a `&` to their commandline
+- They can be created by appending a `&` to their command line
         
         some-long-running-task &
 - `jobs` is used to view jobs 
-- `fg` is used to bring background jobs onto foreground
+- `fg` is used to bring background jobs onto the foreground
 - `bg` is used to run suspended jobs (`Ctrl + Z`ed) jobs in the background
 - `kill %i` is used to kill the job with job id `i`
