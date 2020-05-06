@@ -157,6 +157,7 @@ Utility | Uses
 `uniq`  | Display unique entries
 `less` and `more` | Pagers, divide the text crossing the window boundaries into pages
 `wc` | **W**ord **c**ount. Gives character, spaces and newline count
+`diff` | To view the difference between files (say, your program submissions!)
 
 We can combine them using pipes to achieve a variety of useful tasks.
 
@@ -171,8 +172,10 @@ Symbol | Target
 `>file`    | `stdout` is written onto `file`
 `<file`    | `stdin` is read from `file`
 `>>file`   | `stdout` is appended onto `file`
+`&>file` | Both `stdout` and `stderr` are written onto `file`
 `x>&y` | File Descriptor `x` is written onto File Descriptor `y`.`fd` of `stdin` is `0`, `stdout` is `1` and `stderr` is `2`
 - `command >/dev/null 2&>1` executes the command silently, as it redirects `stdout` to `/dev/null` (remember that it is the infinite sink) and then `stderr`(`fd` `2`) to `stdout`(`fd` `1`)
+- We can also achieve the same with `command &>/dev/null`!
 - But this process is still hanging on the terminal!
 -------
 ## Background Processes
