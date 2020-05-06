@@ -127,7 +127,7 @@ Variable | Significance
 - `chgrp` is also there, which just changes the group.
 - Safest method to make script executable is `chmod +x script.sh`
 - Then, it can be executed as `./script.sh`
-- Since `.` was in `$PATH`, we had to use `./`
+- Since `.` was not in `$PATH`, we had to use `./`
 ------------
 ## Command aliases
 - Analogous to symlinks in the filesystem
