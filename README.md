@@ -9,5 +9,5 @@
 
 ## General Instructions
 - **Not for exam!**
-- Audio lectures at Moodle, along with the notes at [github](/)
+- Audio lectures at Moodle, along with the notes at github
 - Have a linux in your hand (VM works too), or else some online solution like [LXD](https://linuxcontainers.org/lxd)
