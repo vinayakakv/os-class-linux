@@ -1,5 +1,5 @@
 # Understanding a Linux based OS:  S1E4 - Life of Code
-We do coding to write programs to a specified task on the computer.
+> A computer program is a collection of instructions that can be executed by a computer to perform a specific task. 
 
 Here we shall focus on `C` language, which is a simple, yet powerful system programming language.
 

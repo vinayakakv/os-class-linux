@@ -11,6 +11,6 @@
 - Switching
 
 ## Why `linux`?
-- Safer (Windows updates aren't!)
+- Safer ([Windows updates aren't!](https://googleprojectzero.blogspot.com/2020/04/you-wont-believe-what-this-one-line.html))
 - Open-source
-- Used everywhere -- Mobiles (Android), Workstations, Servers, Cloud etc
+- Used everywhere -- Smartphones (Android), Workstations, Servers, Cloud etc
